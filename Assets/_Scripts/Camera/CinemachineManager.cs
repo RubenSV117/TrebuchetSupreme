@@ -22,6 +22,8 @@ public class CinemachineManager : MonoBehaviour
             Instance = this;
 
         activeCam = defaultCam;
+
+        GameManager.OnRoundStart += ResetCam;
     }
 
     public void SwitchCams(GameObject newCam)
@@ -30,5 +32,10 @@ public class CinemachineManager : MonoBehaviour
 
         activeCam = newCam;
         activeCam.SetActive(true);
+    }
+
+    public void ResetCam()
+    {
+        SwitchCams(defaultCam);
     }
 }

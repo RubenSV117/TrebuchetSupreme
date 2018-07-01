@@ -10,14 +10,12 @@
 public class AnimationManager : MonoBehaviour
 {
     private Animator anim;
-    private RoundManager counterWeightManager;
+    [SerializeField] private GameManager gameManager;
 
     void Awake()
     {
         anim = GetComponent<Animator>();
-
-        counterWeightManager = GetComponent<RoundManager>();
-        counterWeightManager.OnCounterWeightTimeEnd += PlayLaunch;
+        gameManager.OnCounterWeightTimeEnd += PlayLaunch;
     }
 
     public void PlayLaunch()

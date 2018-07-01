@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Cinemachine;
+using UnityEngine;
 
 /// <summary>
 /// Base class for projectiles
@@ -20,9 +21,12 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if(checkTag && other.gameObject.CompareTag(tagToCheck))
-            Destroy(other.gameObject);
+        // Reset and continue the streak if it hit the tower
+        GameManager.Instance.Reset(other.gameObject.CompareTag(tagToCheck));
+
+        Destroy(GetComponent<Collider>());
     }
+    
 
 
 }

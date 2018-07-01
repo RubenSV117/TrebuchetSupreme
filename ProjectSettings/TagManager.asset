@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Interact
   - Tower
+  - Projectile
   layers:
   - Default
   - TransparentFX
