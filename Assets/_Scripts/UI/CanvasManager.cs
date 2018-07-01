@@ -16,6 +16,9 @@ public class CanvasManager : MonoBehaviour
     [Tooltip("Slider used to turn the trebuchet")]
     [SerializeField] private GameObject turnBar;
 
+    [Tooltip("Arrows used to show direction of wind resistance")]
+    [SerializeField] private GameObject windArrows;
+
     [Tooltip("Button Filled in according to time left to add weight")]
     public Image timerImage;
 
@@ -29,6 +32,7 @@ public class CanvasManager : MonoBehaviour
 
     public void ResetUI()
     {
+        windArrows.SetActive(true);
         counterWeightButton.SetActive(true);
         turnBar.SetActive(true);
         timerImage.gameObject.SetActive(true);
@@ -40,6 +44,7 @@ public class CanvasManager : MonoBehaviour
         counterWeightButton.SetActive(false);
         timerImage.gameObject.SetActive(false);
         turnBar.SetActive(false);
+        windArrows.SetActive(false);
     }
 
     public void SetScore()

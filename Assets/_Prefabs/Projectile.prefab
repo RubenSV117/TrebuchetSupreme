@@ -13,7 +13,7 @@ Prefab:
   m_IsPrefabParent: 1
 --- !u!1 &1501368893867654
 GameObject:
-  m_ObjectHideFlags: 3
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
@@ -68,7 +68,7 @@ GameObject:
   m_IsActive: 1
 --- !u!4 &4841961855374190
 Transform:
-  m_ObjectHideFlags: 3
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1501368893867654}
@@ -86,7 +86,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1639240824199680}
   m_LocalRotation: {x: -0, y: 0.27046683, z: -0, w: 0.96272933}
-  m_LocalPosition: {x: 163.44678, y: 51.25, z: 184.03801}
+  m_LocalPosition: {x: 194.90001, y: -0.2, z: 148.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4957632203779996}
@@ -99,7 +99,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1547344557389102}
-  m_LocalRotation: {x: 0.59584856, y: -0.00000019371507, z: 0.00000013411044, w: 0.80309683}
+  m_LocalRotation: {x: 0.5958495, y: -0.00000028312206, z: 0.00000020861626, w: 0.8030962}
   m_LocalPosition: {x: -0.0000019073486, y: 10, z: -5.000003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -172,9 +172,9 @@ TrailRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1639240824199680}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -196,23 +196,23 @@ TrailRenderer:
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 15201, guid: 0000000000000000f000000000000000, type: 0}
+  m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.3
+  m_Time: 1
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 0.3
+    widthMultiplier: 0.45
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
         value: 0.95744705
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
+        inSlope: -0.9624402
+        outSlope: -0.9624402
+        tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
@@ -230,8 +230,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0, b: 0, a: 0.18039216}
-      key1: {r: 1, g: 0, b: 0, a: 0}
+      key0: {r: 1, g: 0, b: 0, a: 1}
+      key1: {r: 1, g: 0, b: 0, a: 0.5176471}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -247,8 +247,8 @@ TrailRenderer:
       ctime6: 0
       ctime7: 0
       atime0: 0
-      atime1: 65535
-      atime2: 0
+      atime1: 1157
+      atime2: 65535
       atime3: 0
       atime4: 0
       atime5: 0
@@ -256,17 +256,17 @@ TrailRenderer:
       atime7: 0
       m_Mode: 0
       m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
+      m_NumAlphaKeys: 3
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
     textureMode: 0
-    generateLightingData: 0
+    generateLightingData: 1
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
 --- !u!114 &114168884993214872
 MonoBehaviour:
-  m_ObjectHideFlags: 3
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1501368893867654}
@@ -324,7 +324,7 @@ MonoBehaviour:
   m_ComponentOwner: {fileID: 4841961855374190}
 --- !u!114 &114718775206828190
 MonoBehaviour:
-  m_ObjectHideFlags: 3
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1501368893867654}
@@ -335,7 +335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!114 &114788631391726380
 MonoBehaviour:
-  m_ObjectHideFlags: 3
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1501368893867654}

@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     public event CounterWeightTime OnCounterWeightTimeStart;
     public event CounterWeightTime OnCounterWeightTimeEnd;
 
-    [Tooltip("Amount of seconds to allow counter weight increments, beginning at the first increment")]
+    [Tooltip("Amount of seconds allowed to add counter weight, begins counting at the first increment")]
     [SerializeField] private float timeToIncrementWeight;
 
     [SerializeField] private CanvasManager canvasManager;
@@ -44,10 +44,10 @@ public class GameManager : MonoBehaviour
         Reset(false);
     }
 
-    // reset the round, 
+    // reset the round, if the tower was hit on the last launch then continue adding to the score
     public void Reset(bool onAStreak)
     {
-        score = onAStreak ? score++ : 0;
+        score = onAStreak ? score + 1 : 0;
 
         if (OnRoundStart != null)
             OnRoundStart.Invoke();
@@ -65,6 +65,7 @@ public class GameManager : MonoBehaviour
         if (OnCounterWeightTimeStart != null)
             OnCounterWeightTimeStart.Invoke();
 
+        // wait the set amount of time and increase the timer fill amount
         float targetTime = Time.time + timeToIncrementWeight;
         float startTime = Time.time;
 
@@ -77,6 +78,7 @@ public class GameManager : MonoBehaviour
         if (OnCounterWeightTimeEnd != null)
             OnCounterWeightTimeEnd.Invoke();
 
+        // hide UI during launch
         canvasManager.DeactivateUI();
 
         waitTimeCo = null;

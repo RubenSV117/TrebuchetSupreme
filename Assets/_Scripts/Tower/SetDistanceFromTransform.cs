@@ -16,12 +16,8 @@ public class SetDistanceFromTransform : MonoBehaviour
 
     void Awake()
     {
+        startingPosition = transform.position;
         GameManager.OnRoundStart += SetDistance;
-    }
-
-	void Start () 
-	{
-	    startingPosition = transform.position;
     }
 
     public void SetDistance()

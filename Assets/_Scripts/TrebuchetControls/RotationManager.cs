@@ -19,11 +19,22 @@ public class RotationManager : MonoBehaviour
     [SerializeField] private bool rotateYAxis;
     [SerializeField] private bool rotateZAxis;
 
+    [SerializeField] private float damping = 1;
+
+    private float targetValue;
+    private float currentValue;
+
+    void Update()
+    {
+        currentValue = Mathf.Lerp(currentValue, targetValue, Time.deltaTime / damping);
+
+        transformToRotate.localEulerAngles = new Vector3(rotateXAxis ? (invertRotation ? -currentValue : currentValue) * maxAngleTheta : transform.eulerAngles.x,
+            rotateYAxis ? (invertRotation ? -currentValue : currentValue) * maxAngleTheta : transform.eulerAngles.y,
+            rotateZAxis ? (invertRotation ? -currentValue : currentValue) * maxAngleTheta : transform.eulerAngles.z);
+    }
+
     public void Rotate(float value)
     {
-        transformToRotate.localEulerAngles = new Vector3(rotateXAxis ? (invertRotation ? -value : value) * maxAngleTheta : transform.eulerAngles.x, 
-            rotateYAxis ? (invertRotation ? -value : value) * maxAngleTheta : transform.eulerAngles.y,
-            rotateZAxis ? (invertRotation ? -value : value) * maxAngleTheta : transform.eulerAngles.z);
-
+        targetValue = value;
     }
 }

@@ -33,7 +33,7 @@ public class WindResistance : MonoBehaviour
         currentResistance = Random.Range(-maxResistanceMagnitude, maxResistanceMagnitude);
 
         resistanceArrow.transform.localScale = new Vector3(currentResistance > 0 ? 1 : -1, 1, 1);
-        resistanceText.text = "" + currentResistance.ToString("F1");
+        resistanceText.text = "" + Mathf.Abs(currentResistance).ToString("F1");
     }
 
     public void OnTriggerStay(Collider other)
